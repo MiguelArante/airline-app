@@ -36,6 +36,10 @@ public class AirlabsServiceImpl implements AirlabsService{
         this.restTemplate = restTemplate;
     }
 
+    /**
+     * View Airlines
+     * This calls the /airlines endpoint from AirLabs API 
+     */
     @Override
     public List<Airline> viewAirlines() {
         UriComponentsBuilder uri = UriComponentsBuilder
@@ -48,6 +52,10 @@ public class AirlabsServiceImpl implements AirlabsService{
         return wrapper != null ? wrapper.getResponse() : Collections.emptyList();  
     }
 
+    /**
+     * View Airports
+     * This calls the /airports endpoint from AirLabs API
+     */
     @Override
     public List<Airport> viewAirports() {
 
@@ -61,6 +69,10 @@ public class AirlabsServiceImpl implements AirlabsService{
         return wrapper != null ? wrapper.getResponse() : Collections.emptyList();
     }
 
+    /**
+     * Search Flights based on dep_iata
+     * This calls the /flight endpoint from AirLabs API
+     */
     @Override
     public List<Flight> searchFlight(String dep_iata) {
         UriComponentsBuilder uri = UriComponentsBuilder
