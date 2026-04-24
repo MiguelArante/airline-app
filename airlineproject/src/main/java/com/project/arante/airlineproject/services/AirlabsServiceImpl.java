@@ -42,6 +42,7 @@ public class AirlabsServiceImpl implements AirlabsService{
      */
     @Override
     public List<Airline> viewAirlines() {
+        this.logger.info("### Begin ViewAirlines ");
         UriComponentsBuilder uri = UriComponentsBuilder
             .fromUriString(URL)
             .path("airlines")
@@ -58,7 +59,7 @@ public class AirlabsServiceImpl implements AirlabsService{
      */
     @Override
     public List<Airport> viewAirports() {
-
+       this.logger.info("### Begin viewAirports");
        UriComponentsBuilder uri = UriComponentsBuilder
             .fromUriString(URL)
             .path("airports")
@@ -75,6 +76,7 @@ public class AirlabsServiceImpl implements AirlabsService{
      */
     @Override
     public List<Flight> searchFlight(String dep_iata) {
+        this.logger.info("### Begin SearchFlight " + dep_iata);
         UriComponentsBuilder uri = UriComponentsBuilder
             .fromUriString(URL)
             .path("flights")
